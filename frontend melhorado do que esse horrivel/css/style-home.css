@@ -1,0 +1,218 @@
+/* --- Reset Básico e Estilos Globais (Dark Mode) --- */
+
+/* Adicione este código ao final do seu 'style-home.css' 
+*/
+
+/* Novo container do logo (o link <a>)
+  Usamos flexbox para alinhar a imagem e o texto
+*/
+.logo-link {
+    display: flex;
+    align-items: center; /* Alinha verticalmente a imagem e o texto */
+    text-decoration: none; /* Remove o sublinhado do link */
+}
+
+/* Estilo para a imagem da logo */
+.logo-icon {
+    height: 35px; /* Ajuste a altura da sua logo aqui */
+    width: auto;  /* Mantém a proporção */
+    margin-right: 0.75rem; /* Espaço entre a logo e o texto */
+}
+
+/* Estilo para o texto (o H1)
+  (Substitui o antigo seletor '.logo' que você tinha) 
+*/
+.logo-text {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-white); /* Cor do texto (definida no seu CSS) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-red: #d90429;
+    --color-red-dark: #b30021;
+    --color-white: #f0f0f0;
+    --color-gray-light: #aaa;
+    --color-dark-bg: #121212; /* Fundo principal escuro */
+    --color-dark-surface: #1e1e1e; /* Fundo de superfícies (cards, navbar) */
+    --color-dark-border: #333;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-dark-bg);
+    color: var(--color-white);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    color: var(--color-red);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-red-dark);
+}
+
+/* --- Botões --- */
+.btn {
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-red);
+    color: var(--color-white);
+}
+.btn-primary:hover {
+    background-color: var(--color-red-dark);
+    color: var(--color-white);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+}
+.btn-secondary:hover {
+    background-color: var(--color-red);
+    color: var(--color-white);
+}
+
+/* --- Cabeçalho / Navbar --- */
+.navbar {
+    background-color: var(--color-dark-surface);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--color-dark-border);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-white);
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar nav li {
+    margin-left: 1.5rem;
+}
+
+.navbar nav a {
+    color: var(--color-gray-light);
+    font-weight: 500;
+}
+
+.navbar nav a.active,
+.navbar nav a:hover {
+    color: var(--color-white);
+    border-bottom: 2px solid var(--color-red);
+    padding-bottom: 5px;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+}
+.user-menu a {
+    margin-left: 1rem;
+    color: var(--color-gray-light);
+}
+.user-menu .logout-link {
+    color: var(--color-red);
+}
+.user-menu .logout-link:hover {
+    color: var(--color-red-dark);
+}
+
+/* --- Conteúdo Principal --- */
+main.container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--color-dark-border);
+    padding-bottom: 1rem;
+}
+
+.home-header h2 {
+    font-size: 2rem;
+    color: var(--color-white);
+}
+
+/* --- Grade de Cards --- */
+.assessment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.assessment-card {
+    background-color: var(--color-dark-surface);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-left: 4px solid var(--color-red-dark); /* Destaque lateral vermelho */
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.card-actions {
+    margin-top: auto; /* Empurra as ações para o final do card */
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Para telas pequenas */
+    gap: 0.75rem;
+}
+
+.card-actions .btn-link {
+    font-weight: 500;
+    color: #D3D3D3;
+}
+
+.card-actions .btn-icon {
+    margin-left: auto; /* Joga o ícone de lixeira para a direita */
+    color: var(--color-gray-light);
+    font-size: 1.1rem;
+}
+.card-actions .btn-icon:hover {
+    color: var(--color-red);
+}

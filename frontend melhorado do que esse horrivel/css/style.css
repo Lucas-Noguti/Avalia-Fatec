@@ -1,0 +1,105 @@
+/* --- Reset Básico e Estilos Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f8; /* Um cinza bem claro para o fundo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* --- O Contêiner Principal do Login --- */
+.login-container {
+    background-color: #ffffff; /* O "cartão" de login branco */
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Largura máxima do formulário */
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 1rem; /* Reduzido para dar espaço à imagem */
+    color: #333;
+}
+
+/* --- Estilo da Logo --- */
+.login-logo {
+    width: 80px; /* Tamanho da logo, ajuste conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-bottom: 2rem; /* Espaço abaixo da logo */
+    display: block; /* Garante que a imagem se comporte como um bloco para centralizar */
+    margin-left: auto; /* Centraliza a imagem horizontalmente */
+    margin-right: auto; /* Centraliza a imagem horizontalmente */
+}
+
+/* --- Grupos de Input (Label + Campo) --- */
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Efeito de foco para os inputs */
+.input-group input:focus {
+    outline: none;
+    border-color: #d90429; /* Borda vermelha ao focar */
+    box-shadow: 0 0 5px rgba(217, 4, 41, 0.3);
+}
+
+/* --- Botão de Login --- */
+.login-button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #d90429; /* Cor principal vermelha */
+    color: white; /* Texto branco */
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #b30021; /* Um vermelho mais escuro no hover */
+}
+
+/* --- Links Adicionais --- */
+.links {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.links a {
+    color: #d90429; /* Links vermelhos */
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: text-decoration 0.3s ease;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
