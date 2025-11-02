@@ -1,0 +1,142 @@
+.navbar {
+    background-color: var(--color-dark-surface);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--color-dark-border);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-icon {
+    height: 35px;
+    width: auto;
+    margin-right: 0.75rem;
+}
+
+.logo-text {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-white);
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar nav li {
+    margin-left: 1.5rem;
+}
+
+.navbar nav a {
+    color: var(--color-gray-light);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar nav a.active,
+.navbar nav a:hover {
+    color: var(--color-white);
+    border-bottom: 2px solid var(--color-red);
+    padding-bottom: 5px;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+}
+
+.user-menu a {
+    margin-left: 1rem;
+    color: var(--color-gray-light);
+}
+
+.user-menu .logout-link {
+    color: var(--color-red);
+}
+
+.user-menu .logout-link:hover {
+    color: var(--color-red-dark);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-wrap: wrap;
+        width: 95%;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+        order: 3;
+    }
+    
+    .navbar nav {
+        order: 4;
+        width: 100%;
+        display: none;
+    }
+    
+    .navbar nav.active {
+        display: block;
+    }
+    
+    .navbar nav ul {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+    
+    .navbar nav li {
+        margin-left: 0;
+        margin-bottom: 0.75rem;
+    }
+    
+    .user-menu {
+        order: 2;
+    }
+    
+    .logo-link {
+        order: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.2rem;
+    }
+    
+    .logo-icon {
+        height: 28px;
+    }
+    
+    .user-menu a {
+        font-size: 0.9rem;
+        margin-left: 0.5rem;
+    }
+}
