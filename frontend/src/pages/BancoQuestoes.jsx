@@ -53,9 +53,14 @@ function BancoQuestoes() {
     <>
       <section className="home-header">
         <h2>Banco de Questões</h2>
-        <Link to="/criar-questao" className="btn btn-primary">
-          <i className="fas fa-plus"></i> Cadastrar Nova Questão
-        </Link>
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <Link to="/testar-pdf" className="btn btn-secondary">
+            <i className="fas fa-file-pdf"></i> Testar Geração de PDF
+          </Link>
+          <Link to="/criar-questao" className="btn btn-primary">
+            <i className="fas fa-plus"></i> Cadastrar Nova Questão
+          </Link>
+        </div>
       </section>
 
       <section className="filter-bar">
