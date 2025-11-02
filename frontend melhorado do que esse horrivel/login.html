@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLAVALIA</title>
+    <link rel="icon" type="image/png" href="imagens/Logo_Fla_Avalia_preto.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="login-container">
+        <form id="login-form">
+           
+            <img src="imagens/Logo_Fla_Avalia.png" alt="Logo da Empresa" class="login-logo"> <div class="input-group"></div>
+            <h2>Login</h2>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="seuemail@dominio.com" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" placeholder="Sua senha" required>
+            </div>
+            
+            <button type="submit" class="login-button">Entrar</button>
+        
+        </form>
+    </div>
+    <script>
+        // 1. Pega o elemento do formulário pelo ID
+        const loginForm = document.getElementById('login-form');
+
+        // 2. Adiciona um "ouvinte de evento" que espera pelo 'submit'
+        loginForm.addEventListener('submit', function(evento) {
+            
+            // 3. Previne o comportamento padrão do formulário (que é recarregar a página)
+            evento.preventDefault(); 
+            
+            // 4. Redireciona o usuário para a 'home.html'
+            // (Isso só acontece se os campos 'required' estiverem preenchidos)
+            window.location.href = 'home.html'; 
+        });
+    </script>
+</body>
+</html>
