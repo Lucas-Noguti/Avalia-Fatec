@@ -56,6 +56,15 @@ function Navbar() {
                 Resultados
               </Link>
             </li>
+            <li>
+              <Link 
+                to="/testar-pdf" 
+                className={location.pathname === '/testar-pdf' ? 'active' : ''}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <i className="fas fa-file-pdf"></i> Testar PDF
+              </Link>
+            </li>
           </ul>
         </nav>
 

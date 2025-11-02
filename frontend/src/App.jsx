@@ -5,6 +5,7 @@ import BancoQuestoes from './pages/BancoQuestoes';
 import CriarQuestao from './pages/CriarQuestao';
 import EditarQuestao from './pages/EditarQuestao';
 import CriarAvaliacao from './pages/CriarAvaliacao';
+import TestarPDF from './pages/TestarPDF';
 import Layout from './components/Layout';
 import './styles/global.css';
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/criar-questao" element={<CriarQuestao />} />
           <Route path="/editar-questao" element={<EditarQuestao />} />
           <Route path="/criar-avaliacao" element={<CriarAvaliacao />} />
+          <Route path="/testar-pdf" element={<TestarPDF />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
