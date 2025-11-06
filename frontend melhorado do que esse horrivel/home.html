@@ -21,15 +21,16 @@
 
         <nav>
             <ul>
-                <li><a href="#" class="active">Minhas Avaliações</a></li>
+                <li><a href="home.html" class="active">Minhas Avaliações</a></li>
                 <li><a href="banco-questoes.html">Banco de Questões</a></li>
                 <li><a href="#">Resultados</a></li>
             </ul>
         </nav>
         <div class="user-menu">
-            <a href="#">Olá, Professor!</a> 
-            <a href="login.html" class="logout-link">Sair <i class="fas fa-sign-out-alt"></i></a>
-        </div>
+    <a href="#">Olá, Professor!</a>
+    <a href="gerenciar-disciplinas.html" class="admin-link">Admin</a> 
+    <a href="login.html" class="logout-link">Sair <i class="fas fa-sign-out-alt"></i></a>
+</div>
     </div>
 </header>
 
@@ -47,9 +48,9 @@
                 <p class="card-details">Turma: Engenharia Civil - 2025.1</p>
                 <p class="card-details">Criada em: 24/10/2025</p>
                 <div class="card-actions">
-                    <a href="#" class="btn btn-secondary">Editar</a>
-                    <a href="#" class="btn-link">Ver Resultados</a>
-                    <a href="#" class="btn-icon"><i class="fas fa-trash"></i></a>
+                    <a href="editar-avaliacao.html" class="btn btn-secondary">Editar</a>
+                    <a href="ver-resultados.html" class="btn-link">Ver Resultados</a>
+                    <a href="#modal-excluir" class="btn-icon" title="Excluir"><i class="fas fa-trash"></i></a>
                 </div>
             </article>
 
@@ -58,9 +59,9 @@
                 <p class="card-details">Turma: Ciência da Computação - 2025.1</p>
                 <p class="card-details">Criada em: 20/10/2025</p>
                 <div class="card-actions">
-                    <a href="#" class="btn btn-secondary">Editar</a>
-                    <a href="#" class="btn-link">Ver Resultados</a>
-                    <a href="#" class="btn-icon"><i class="fas fa-trash"></i></a>
+                    <a href="editar-avaliacao.html" class="btn btn-secondary">Editar</a>
+                    <a href="ver-resultados.html" class="btn-link">Ver Resultados</a>
+                    <a href="#modal-excluir" class="btn-icon" title="Excluir"><i class="fas fa-trash"></i></a>
                 </div>
             </article>
             
@@ -69,13 +70,35 @@
                 <p class="card-details">Turma: Letras - 2025.1</p>
                 <p class="card-details">Criada em: 18/10/2025</p>
                 <div class="card-actions">
-                    <a href="#" class="btn btn-secondary">Continuar Editando</a>
-                    <a href="#" class="btn-icon"><i class="fas fa-trash"></i></a>
+                    <a href="editar-avaliacao.html" class="btn btn-secondary">Continuar Editando</a>
+                    <a href="#modal-excluir" class="btn-icon" title="Excluir"><i class="fas fa-trash"></i></a>
                 </div>
             </article>
 
         </section>
     </main>
 
-</body>
+    <div id="modal-excluir" class="modal-overlay">
+        <div class="modal-content modal-confirm">
+            
+            <div class="modal-header-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            
+            <h2>Confirmar Exclusão</h2>
+            
+            <div class="modal-body">
+                <p class="confirm-text">
+                    Você tem certeza que deseja excluir este item? 
+                    Esta ação não pode ser desfeita.
+                </p>
+            </div>
+
+            <div class="modal-footer">
+                <a href="#" class="btn btn-secondary">Cancelar</a>
+                <a href="#" class="btn btn-primary">Sim, Excluir</a>
+            </div>
+        </div>
+    </div>
+    </body>
 </html>

@@ -36,7 +36,8 @@
     <main class="container">
         
         <section class="home-header">
-            <h2>Editar Questão</h2> <a href="banco-questoes.html" class="btn btn-secondary">
+            <h2>Editar Questão</h2>
+            <a href="banco-questoes.html" class="btn btn-secondary">
                 <i class="fas fa-arrow-left"></i> Voltar ao Banco
             </a>
         </section>
@@ -69,16 +70,7 @@
                     <textarea id="enunciado" name="enunciado" rows="8" placeholder="Digite o enunciado da questão...">Qual é a derivada de x²?</textarea>
                 </div>
 
-                <div class="form-group">
-                    <label for="tipo-questao">Tipo de Questão</label>
-                    <select id="tipo-questao" name="tipo-questao">
-                        <option value="multipla" selected>Múltipla Escolha</option>
-                        <option value="dissertativa">Dissertativa</option>
-                        <option value="vf">Verdadeiro/Falso</option>
-                    </select>
-                </div>
-
-                <div id="bloco-multipla" class="conditional-block">
+                <div class="conditional-block">
                     <h4>Alternativas</h4>
                     
                     <div class="alternativa-group">
@@ -109,25 +101,6 @@
                     <button type="button" class="btn btn-secondary btn-add-option">
                         <i class="fas fa-plus"></i> Adicionar Alternativa
                     </button>
-                </div>
-
-                <div id="bloco-dissertativa" class="conditional-block" style="display: none;"> 
-                    <h4>Resposta Esperada / Gabarito</h4>
-                    <div class="form-group">
-                        <textarea id="resposta-dissertativa" name="resposta-dissertativa" rows="5" placeholder="Descreva o gabarito ou a resposta esperada para esta questão..."></textarea>
-                    </div>
-                </div>
-
-                <div id="bloco-vf" class="conditional-block" style="display: none;"> 
-                    <h4>Resposta Correta</h4>
-                    <div class="vf-group">
-                        <input type="radio" name="vf_correta" id="vf-v" value="true">
-                        <label for="vf-v">Verdadeiro</label>
-                    </div>
-                    <div class="vf-group">
-                        <input type="radio" name="vf_correta" id="vf-f" value="false">
-                        <label for="vf-f">Falso</label>
-                    </div>
                 </div>
 
                 <div class="form-actions">
