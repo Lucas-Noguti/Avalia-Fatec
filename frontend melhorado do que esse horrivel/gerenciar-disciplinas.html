@@ -13,12 +13,10 @@
     
 <header class="navbar">
     <div class="container">
-        
         <a href="home.html" class="logo-link">
             <img src="imagens/Logo_Fla_Avalia.png" alt="Logo Fla Avalia" class="logo-icon">
             <h1 class="logo-text">FLAVALIA</h1>
         </a>
-
         <nav>
             <ul>
                 <li><a href="home.html">Minhas Avaliações</a></li> 
@@ -41,15 +39,15 @@
     </section>
 
    <nav class="admin-nav">
-    <a href="gerenciar-disciplinas.html" class="active">Disciplinas</a>
-    <a href="gerenciar-turmas.html">Turmas</a>
-    <a href="gerenciar-professores.html">Professores</a>
-</nav>
+        <a href="gerenciar-disciplinas.html" class="active">Disciplinas</a>
+        <a href="gerenciar-turmas.html">Turmas</a>
+        <a href="gerenciar-professores.html">Professores</a>
+    </nav>
 
     <section class="question-form-container">
         <div class="admin-content-header">
             <h3>Disciplinas Cadastradas</h3>
-            <a href="#modal-disciplina" class="btn btn-primary"><i class="fas fa-plus"></i> Nova Disciplina</a>
+            <a href="#modal-disciplina-adicionar" class="btn btn-primary"><i class="fas fa-plus"></i> Nova Disciplina</a>
         </div>
 
         <div class="question-list-container">
@@ -64,21 +62,21 @@
                     <tr>
                         <td>Cálculo I</td>
                         <td class="table-actions">
-                            <a href="#modal-disciplina" class="btn-icon" title="Editar"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="#modal-disciplina-editar" class="btn-icon" title="Editar"><i class="fas fa-pencil-alt"></i></a>
                             <a href="#modal-excluir" class="btn-icon btn-icon-delete" title="Excluir"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                     <tr>
                         <td>Estrutura de Dados</td>
                         <td class="table-actions">
-                            <a href="#modal-disciplina" class="btn-icon" title="Editar"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="#modal-disciplina-editar" class="btn-icon" title="Editar"><i class="fas fa-pencil-alt"></i></a>
                             <a href="#modal-excluir" class="btn-icon btn-icon-delete" title="Excluir"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                     <tr>
                         <td>Redação</td>
                         <td class="table-actions">
-                            <a href="#modal-disciplina" class="btn-icon" title="Editar"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="#modal-disciplina-editar" class="btn-icon" title="Editar"><i class="fas fa-pencil-alt"></i></a>
                             <a href="#modal-excluir" class="btn-icon btn-icon-delete" title="Excluir"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
@@ -89,23 +87,39 @@
 
 </main>
 
-    <div id="modal-disciplina" class="modal-overlay">
+    <div id="modal-disciplina-adicionar" class="modal-overlay">
         <div class="modal-content modal-form">
             <a href="#" class="modal-close" title="Fechar">&times;</a>
-            
             <div class="modal-header">
                 <h2>Adicionar Nova Disciplina</h2>
             </div>
-            
             <form class="modal-body">
                 <div class="form-group">
-                    <label for="nome-disciplina">Nome da Disciplina</label>
-                    <input type="text" id="nome-disciplina" name="nome" placeholder="Ex: Banco de Dados">
+                    <label for="nome-disciplina-add">Nome da Disciplina</label>
+                    <input type="text" id="nome-disciplina-add" name="nome" placeholder="Ex: Banco de Dados">
                 </div>
-                
                 <div class="modal-footer">
                     <a href="#" class="btn btn-secondary">Cancelar</a>
                     <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-disciplina-editar" class="modal-overlay">
+        <div class="modal-content modal-form">
+            <a href="#" class="modal-close" title="Fechar">&times;</a>
+            <div class="modal-header">
+                <h2>Editar Disciplina</h2>
+            </div>
+            <form class="modal-body">
+                <div class="form-group">
+                    <label for="nome-disciplina-edit">Nome da Disciplina</label>
+                    <input type="text" id="nome-disciplina-edit" name="nome" value="Cálculo I">
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
                 </div>
             </form>
         </div>
