@@ -27,9 +27,10 @@
             </ul>
         </nav>
         <div class="user-menu">
-            <a href="#">Olá, Professor!</a> 
-            <a href="login.html" class="logout-link">Sair <i class="fas fa-sign-out-alt"></i></a>
-        </div>
+    <a href="#">Olá, Professor!</a>
+    <a href="gerenciar-disciplinas.html" class="admin-link">Admin</a> 
+    <a href="login.html" class="logout-link">Sair <i class="fas fa-sign-out-alt"></i></a>
+</div>
     </div>
 </header>
 
@@ -67,19 +68,10 @@
 
                 <div class="form-group">
                     <label for="enunciado">Enunciado</label>
-                    <textarea id="enunciado" name="enunciado" rows="8" placeholder="Digite o enunciado da questão... (Dica: Use um editor Rich Text aqui, como ReactQuill)"></textarea>
+                    <textarea id="enunciado" name="enunciado" rows="8" placeholder="Digite o enunciado da questão..."></textarea>
                 </div>
 
-                <div class="form-group">
-                    <label for="tipo-questao">Tipo de Questão</label>
-                    <select id="tipo-questao" name="tipo-questao">
-                        <option value="multipla">Múltipla Escolha</option>
-                        <option value="dissertativa">Dissertativa</option>
-                        <option value="vf">Verdadeiro/Falso</option>
-                    </select>
-                </div>
-
-                <div id="bloco-multipla" class="conditional-block">
+                <div class="conditional-block">
                     <h4>Alternativas</h4>
                     
                     <div class="alternativa-group">
@@ -110,23 +102,6 @@
                     <button type="button" class="btn btn-secondary btn-add-option">
                         <i class="fas fa-plus"></i> Adicionar Alternativa
                     </button>
-                </div>
-
-                <div id="bloco-dissertativa" class="conditional-block" style="display: none;"> <h4>Resposta Esperada / Gabarito</h4>
-                    <div class="form-group">
-                        <textarea id="resposta-dissertativa" name="resposta-dissertativa" rows="5" placeholder="Descreva o gabarito ou a resposta esperada para esta questão..."></textarea>
-                    </div>
-                </div>
-
-                <div id="bloco-vf" class="conditional-block" style="display: none;"> <h4>Resposta Correta</h4>
-                    <div class="vf-group">
-                        <input type="radio" name="vf_correta" id="vf-v" value="true">
-                        <label for="vf-v">Verdadeiro</label>
-                    </div>
-                    <div class="vf-group">
-                        <input type="radio" name="vf_correta" id="vf-f" value="false">
-                        <label for="vf-f">Falso</label>
-                    </div>
                 </div>
 
                 <div class="form-actions">

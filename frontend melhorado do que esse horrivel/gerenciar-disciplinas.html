@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Disciplinas - FLAVALIA</title> 
+    <link rel="icon" type="image/png" href="imagens/Logo_Fla_Avalia_preto.png">
+    <link rel="stylesheet" href="css/style-home.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+<header class="navbar">
+    <div class="container">
+        
+        <a href="home.html" class="logo-link">
+            <img src="imagens/Logo_Fla_Avalia.png" alt="Logo Fla Avalia" class="logo-icon">
+            <h1 class="logo-text">FLAVALIA</h1>
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="home.html">Minhas Avaliações</a></li> 
+                <li><a href="banco-questoes.html">Banco de Questões</a></li>
+                <li><a href="#">Resultados</a></li>
+            </ul>
+        </nav>
+        <div class="user-menu">
+            <a href="#">Olá, Professor!</a>
+            <a href="gerenciar-disciplinas.html" class="admin-link active">Admin</a> 
+            <a href="login.html" class="logout-link">Sair <i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="home-header">
+        <h2>Painel de Administração</h2>
+    </section>
+
+   <nav class="admin-nav">
+    <a href="gerenciar-disciplinas.html" class="active">Disciplinas</a>
+    <a href="gerenciar-turmas.html">Turmas</a>
+    <a href="gerenciar-professores.html">Professores</a>
+</nav>
+
+    <section class="question-form-container">
+        <div class="admin-content-header">
+            <h3>Disciplinas Cadastradas</h3>
+            <a href="#modal-disciplina" class="btn btn-primary"><i class="fas fa-plus"></i> Nova Disciplina</a>
+        </div>
+
+        <div class="question-list-container">
+            <table class="question-table">
+                <thead>
+                    <tr>
+                        <th>Nome da Disciplina</th>
+                        <th class="column-actions">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cálculo I</td>
+                        <td class="table-actions">
+                            <a href="#modal-disciplina" class="btn-icon" title="Editar"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="#modal-excluir" class="btn-icon btn-icon-delete" title="Excluir"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Estrutura de Dados</td>
+                        <td class="table-actions">
+                            <a href="#modal-disciplina" class="btn-icon" title="Editar"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="#modal-excluir" class="btn-icon btn-icon-delete" title="Excluir"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Redação</td>
+                        <td class="table-actions">
+                            <a href="#modal-disciplina" class="btn-icon" title="Editar"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="#modal-excluir" class="btn-icon btn-icon-delete" title="Excluir"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+    <div id="modal-disciplina" class="modal-overlay">
+        <div class="modal-content modal-form">
+            <a href="#" class="modal-close" title="Fechar">&times;</a>
+            
+            <div class="modal-header">
+                <h2>Adicionar Nova Disciplina</h2>
+            </div>
+            
+            <form class="modal-body">
+                <div class="form-group">
+                    <label for="nome-disciplina">Nome da Disciplina</label>
+                    <input type="text" id="nome-disciplina" name="nome" placeholder="Ex: Banco de Dados">
+                </div>
+                
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-excluir" class="modal-overlay">
+        <div class="modal-content modal-confirm">
+            <div class="modal-header-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h2>Confirmar Exclusão</h2>
+            <div class="modal-body">
+                <p class="confirm-text">
+                    Você tem certeza que deseja excluir esta disciplina? 
+                    Todas as questões associadas a ela podem ser afetadas.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-secondary">Cancelar</a>
+                <a href="#" class="btn btn-primary">Sim, Excluir</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

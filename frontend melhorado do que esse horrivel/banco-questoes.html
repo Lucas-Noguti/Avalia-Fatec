@@ -28,10 +28,11 @@
                 <li><a href="#">Resultados</a></li>
             </ul>
         </nav>
-        <div class="user-menu">
-            <a href="#">Olá, Professor!</a> 
-            <a href="login.html" class="logout-link">Sair <i class="fas fa-sign-out-alt"></i></a>
-        </div>
+       <div class="user-menu">
+    <a href="#">Olá, Professor!</a>
+    <a href="gerenciar-disciplinas.html" class="admin-link">Admin</a> 
+    <a href="login.html" class="logout-link">Sair <i class="fas fa-sign-out-alt"></i></a>
+</div>
     </div>
 </header>
 
@@ -79,29 +80,29 @@
                         <td class="table-actions">
                             <a href="#modal-visualizar" class="btn-icon" title="Visualizar"><i class="fas fa-eye"></i></a>
                             <a href="editar-questao.html" class="btn-icon" title="Editar"><i class="fas fa-pencil-alt"></i></a>
-                            <a href="#" class="btn-icon btn-icon-delete" title="Excluir"><i class="fas fa-trash"></i></a>
+                            <a href="#modal-excluir" class="btn-icon btn-icon-delete" title="Excluir"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                     
                     <tr>
-                        <td class="enunciado-preview">Explique o conceito de "Pilha" (Stack) em Estrutura de Dados, citando suas principais operações (push, pop).</td>
+                        <td class="enunciado-preview">Qual estrutura de dados usa o princípio LIFO (Last-In, First-Out)?</td>
                         <td>Estrutura de Dados</td>
-                        <td>Dissertativa</td>
+                        <td>Múltipla Escolha</td>
                         <td class="table-actions">
                             <a href="#modal-visualizar" class="btn-icon" title="Visualizar"><i class="fas fa-eye"></i></a>
                             <a href="editar-questao.html" class="btn-icon" title="Editar"><i class="fas fa-pencil-alt"></i></a>
-                            <a href="#" class="btn-icon btn-icon-delete" title="Excluir"><i class="fas fa-trash"></i></a>
+                            <a href="#modal-excluir" class="btn-icon btn-icon-delete" title="Excluir"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
 
                     <tr>
-                        <td class="enunciado-preview">"Java é uma linguagem de programação puramente interpretada." (Verdadeiro ou Falso?)</td>
-                        <td>Estrutura de Dados</td>
-                        <td>Verdadeiro/Falso</td>
+                        <td class="enunciado-preview">Qual o resultado de 2 + 2?</td>
+                        <td>Cálculo I</td>
+                        <td>Múltipla Escolha</td>
                         <td class="table-actions">
                             <a href="#modal-visualizar" class="btn-icon" title="Visualizar"><i class="fas fa-eye"></i></a>
                             <a href="editar-questao.html" class="btn-icon" title="Editar"><i class="fas fa-pencil-alt"></i></a>
-                            <a href="#" class="btn-icon btn-icon-delete" title="Excluir"><i class="fas fa-trash"></i></a>
+                            <a href="#modal-excluir" class="btn-icon btn-icon-delete" title="Excluir"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                      </tbody>
@@ -126,11 +127,6 @@
                     <span class="info-label">Nível</span>
                     <p>Fácil</p>
                 </div>
-                <div class="info-group">
-                    <span class="info-label">Tipo</span>
-                    <p>Múltipla Escolha</p>
-                </div>
-
                 <hr class="modal-divider">
 
                 <div class="info-group">
@@ -156,6 +152,29 @@
                         </li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-excluir" class="modal-overlay">
+        <div class="modal-content modal-confirm">
+            
+            <div class="modal-header-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            
+            <h2>Confirmar Exclusão</h2>
+            
+            <div class="modal-body">
+                <p class="confirm-text">
+                    Você tem certeza que deseja excluir este item? 
+                    Esta ação não pode ser desfeita.
+                </p>
+            </div>
+
+            <div class="modal-footer">
+                <a href="#" class="btn btn-secondary">Cancelar</a>
+                <a href="#" class="btn btn-primary">Sim, Excluir</a>
             </div>
         </div>
     </div>

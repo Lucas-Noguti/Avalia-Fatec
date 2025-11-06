@@ -176,8 +176,6 @@ main.container {
     flex-direction: column;
 }
 
-
-
 .card-actions {
     margin-top: auto;
     padding-top: 1rem;
@@ -229,23 +227,7 @@ main.container {
     margin-bottom: 0.5rem;
 }
 
-.form-group input[type="search"],
-.form-group select {
-    background-color: var(--color-dark-bg);
-    color: var(--color-white);
-    border: 1px solid var(--color-dark-border);
-    border-radius: 5px;
-    padding: 0.75rem;
-    font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
-}
-
-.form-group input[type="search"]:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: var(--color-red);
-    box-shadow: 0 0 0 2px rgba(217, 4, 41, 0.3);
-}
+/* --- (REGRAS DE INPUT REMOVIDAS DAQUI) --- */
 
 .form-group.search-group {
     flex-basis: 300px; 
@@ -347,28 +329,7 @@ main.container {
     min-width: 250px; 
 }
 
-.form-group input[type="search"],
-.form-group select,
-.form-group textarea, 
-.alternativa-group input[type="text"] { 
-    background-color: var(--color-dark-bg);
-    color: var(--color-white);
-    border: 1px solid var(--color-dark-border);
-    border-radius: 5px;
-    padding: 0.75rem;
-    font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
-    width: 100%;
-}
-
-.form-group input[type="search"]:focus,
-.form-group select:focus,
-.form-group textarea:focus,
-.alternativa-group input[type="text"]:focus {
-    outline: none;
-    border-color: var(--color-red);
-    box-shadow: 0 0 0 2px rgba(217, 4, 41, 0.3);
-}
+/* --- (REGRAS DE INPUT REMOVIDAS DAQUI) --- */
 
 .conditional-block {
     padding: 1.5rem;
@@ -416,21 +377,6 @@ main.container {
 }
 .btn-add-option i {
     margin-right: 0.5rem;
-}
-
-.vf-group {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-.vf-group label {
-    font-size: 1rem;
-    color: var(--color-white);
-}
-.vf-group input[type="radio"] {
-    accent-color: var(--color-red);
-    transform: scale(1.2);
 }
 
 .form-actions {
@@ -606,13 +552,20 @@ main.container {
     background: none;
 }
 
+
+/* --- INÍCIO DA CORREÇÃO ---
+  Esta é a ÚNICA regra de estilo para inputs e select.
+  Ela substitui todas as outras que estavam duplicadas.
+*/
 .form-group input[type="search"],
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group input[type="datetime-local"],
 .form-group select,
 .form-group textarea,
-.alternativa-group input[type="text"],
-.form-group input[type="text"], 
-.form-group input[type="number"], 
-.form-group input[type="datetime-local"] 
+.alternativa-group input[type="text"]
 {
     background-color: var(--color-dark-bg);
     color: var(--color-white);
@@ -624,24 +577,29 @@ main.container {
     width: 100%;
 }
 
+/* Esta é a ÚNICA regra de :focus */
 .form-group input[type="search"]:focus,
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="datetime-local"]:focus,
 .form-group select:focus,
 .form-group textarea:focus,
-.alternativa-group input[type="text"]:focus,
-.form-group input[type="text"]:focus,
-.form-group input[type="number"]:focus,
-.form-group input[type="datetime-local"]:focus {
+.alternativa-group input[type="text"]:focus
+{
     outline: none;
     border-color: var(--color-red);
     box-shadow: 0 0 0 2px rgba(217, 4, 41, 0.3);
 }
+/* --- FIM DA CORREÇÃO --- */
+
 
 .form-group input[type="datetime-local"]::-webkit-calendar-picker-indicator {
     background-color: var(--color-gray-light);
     border-radius: 2px;
     cursor: pointer;
 }
-
 
 .question-search-results {
     max-height: 400px;
@@ -754,4 +712,326 @@ section.form-actions {
     gap: 1rem;
     padding-top: 1.5rem;
     margin-top: -1rem; 
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: var(--color-dark-surface);
+    border: 1px solid var(--color-dark-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    position: relative; 
+    overflow: hidden;
+}
+
+.stat-card h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-gray-light);
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--color-white);
+    line-height: 1.2;
+}
+
+.stat-unit {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-gray-light);
+}
+
+.stat-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.05); 
+    transform: rotate(-10deg);
+}
+
+.status-badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+.status-concluido {
+    background-color: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+}
+.status-pendente {
+    background-color: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+}
+
+.btn-link-disabled {
+    color: var(--color-dark-border);
+    pointer-events: none;
+    text-decoration: none;
+}
+
+.performance-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.performance-item {
+    background-color: var(--color-dark-bg);
+    border: 1px solid var(--color-dark-border);
+    border-radius: 5px;
+    padding: 1rem 1.25rem;
+}
+
+.performance-item .item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.performance-item .enunciado {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-white);
+}
+
+.performance-item .details {
+    font-size: 0.85rem;
+    color: var(--color-gray-light);
+    font-weight: 500;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: var(--color-dark-border);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--color-red); 
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+.progress-bar.low-performance {
+    background-color: #ffc107; 
+}
+
+.modal-content.modal-confirm {
+    max-width: 500px; 
+    padding: 2rem;
+    text-align: center; 
+}
+
+.modal-header-icon {
+    font-size: 3rem;
+    color: var(--color-red); 
+    margin-bottom: 1rem;
+}
+
+.modal-confirm h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+}
+
+.modal-confirm .confirm-text {
+    font-size: 1rem;
+    color: var(--color-gray-light);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.user-menu .admin-link {
+    color: var(--color-gray-light);
+    font-weight: 500;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+.user-menu .admin-link.active,
+.user-menu .admin-link:hover {
+    color: var(--color-white);
+    border-bottom-color: var(--color-red);
+}
+
+.modal-content.modal-form {
+    max-width: 550px; 
+}
+
+.modal-form .modal-body {
+    padding: 0;
+    gap: 0;
+}
+
+.modal-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* --- (REGRAS DE INPUT REMOVIDAS DAQUI) --- */
+
+.modal-form .modal-footer {
+    justify-content: flex-end; 
+    border-top: 1px solid var(--color-dark-border);
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.question-table .column-actions {
+    width: 120px; 
+    text-align: right;
+}
+.question-table .table-actions {
+    justify-content: flex-end; 
+}
+
+.admin-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0;
+    border-bottom: none; 
+}
+
+.admin-nav a {
+    padding: 0.75rem 1.5rem; 
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 50px; 
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.admin-nav a {
+    background-color: var(--color-dark-surface);
+    color: var(--color-gray-light);
+}
+
+.admin-nav a.active {
+    background-color: var(--color-red);
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+.admin-nav a:hover {
+    background-color: #333; 
+    color: var(--color-white);
+}
+
+.admin-content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-dark-border);
+}
+
+.admin-content-header h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.role-badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+.role-admin {
+    background-color: rgba(217, 4, 41, 0.2);
+    color: var(--color-red);
+}
+.role-prof {
+    background-color: rgba(170, 170, 170, 0.2);
+    color: var(--color-gray-light);
+}
+
+.modal-user-info {
+    font-size: 0.95rem;
+    color: var(--color-gray-light);
+    background-color: var(--color-dark-bg);
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--color-dark-border);
+}
+
+.form-subtitle {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+}
+
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem; 
+}
+.radio-group input[type="radio"] {
+    accent-color: var(--color-red);
+    transform: scale(1.1);
+}
+.radio-group label {
+    font-size: 1rem;
+    color: var(--color-white);
+    margin-left: -0.5rem; 
+}
+
+.checkbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-height: 200px; 
+    overflow-y: auto;
+    background: var(--color-dark-bg);
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--color-dark-border);
+}
+.checkbox-item {
+    display: flex;
+    align-items: center;
+}
+.checkbox-item input[type="checkbox"] {
+    accent-color: var(--color-red);
+    width: 18px;
+    height: 18px;
+    margin-right: 0.75rem;
+}
+.checkbox-item label {
+    font-size: 1rem;
+    color: var(--color-white);
 }
