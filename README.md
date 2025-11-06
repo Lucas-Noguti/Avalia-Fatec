@@ -6,7 +6,7 @@ Uma plataforma web para que professores possam criar, gerenciar e compartilhar p
 
 Este projeto foi desenvolvido em grupo para fins avaliativos na faculdade e tem como objetivo principal otimizar o tempo de professores na elaboração de avaliações. A plataforma permite a criação de um banco de questões reutilizáveis, a montagem de provas com diferentes questões e a exportação para formatos imprimíveis.
 
-### Screenshots 
+## Screenshots 
 
 (adicionar prints do nosso projeto aqui)
 
