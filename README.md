@@ -27,19 +27,19 @@ Este projeto foi desenvolvido em grupo para fins avaliativos na faculdade e tem 
 
 * **[Ilie Krishna]**
     * [GitHub](https://github.com/iliekrishna)
-    * [LinkedIn](https://linkedin.com/in/[usuario-linkedin])
+    * [LinkedIn](https://www.linkedin.com/in/ilie-krishna-4a9009231)
 
 * **[Nicole Trujillano]**
     * [GitHub](https://github.com/NicoleTrujillano)
-    * [LinkedIn](https://linkedin.com/in/[usuario-linkedin])
+    * [LinkedIn](https://www.linkedin.com/in/nicoletrujillano)
 
 * **[Lucas Noguti]**
     * [GitHub](https://github.com/Lucas-Noguti)
-    * [LinkedIn](https://linkedin.com/in/[usuario-linkedin])
+    * [LinkedIn](https://www.linkedin.com/in/lucasnoguti)
  
  * **[João Guilherme]**
     * [GitHub](https://github.com/o-guima)
-    * [LinkedIn](https://linkedin.com/in/[usuario-linkedin])
+    * [LinkedIn](https://www.linkedin.com/in/joão-guilherme-mendes-arquejada-149463257/)
 
 * **[Maria Júlia]**
     * [GitHub](https://github.com/maju-cardoso)
@@ -47,17 +47,17 @@ Este projeto foi desenvolvido em grupo para fins avaliativos na faculdade e tem 
  
 * **[Manuela Gadelho]**
     * [GitHub](https://github.com/Manuela-Gadelho)
-    * [LinkedIn](https://linkedin.com/in/[usuario-linkedin])
+    * [LinkedIn](https://www.linkedin.com/in/manuela-moreira-gadelho/)
 
 * **[Breno Santos]**
     * [GitHub](https://github.com/ZockinZ)
-    * [LinkedIn](https://linkedin.com/in/[usuario-linkedin])
+    * [LinkedIn](https://www.linkedin.com/in/breno-souza-santos-28a924306)
 
 * **[Pedro Dienes]**
     * [GitHub](https://github.com/WLFGRL2014)
-    * [LinkedIn](https://linkedin.com/in/[usuario-linkedin])
+    * [LinkedIn](https://www.linkedin.com/in/pedrodienes)
    
 * **[Ruryá Henri]**
     * [GitHub](https://github.com/[usuario-github])
-    * [LinkedIn](https://linkedin.com/in/[usuario-linkedin])
+    * [LinkedIn](https://www.linkedin.com/in/henri-oliveira-miranda-46658421a/)
       
