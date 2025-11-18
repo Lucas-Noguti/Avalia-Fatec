@@ -19,7 +19,6 @@ public class Disciplina {
         this.nome = nome;
     }
 
-    // Getters e Setters
     public Long getId() {
         return id;
     }

@@ -39,9 +39,9 @@
     <main class="container">
         
         <section class="home-header">
-            <h2>Banco de Questões</h2>
-            <a href="criar-questao.html" class="btn btn-primary"><i class="fas fa-plus"></i> Cadastrar Nova Questão</a>
-        </section>
+    <h2>Banco de Questões</h2>
+    <a href="/criar-questao" class="btn btn-primary"><i class="fas fa-plus"></i> Cadastrar Nova Questão</a>
+</section>
 
         <section class="filter-bar">
             <form class="filter-form">
@@ -73,39 +73,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="enunciado-preview">Qual é a derivada de x²?</td>
-                        <td>Cálculo I</td>
-                        <td>Múltipla Escolha</td>
-                        <td class="table-actions">
-                            <a href="#modal-visualizar" class="btn-icon" title="Visualizar"><i class="fas fa-eye"></i></a>
-                            <a href="editar-questao.html" class="btn-icon" title="Editar"><i class="fas fa-pencil-alt"></i></a>
-                            <a href="#modal-excluir" class="btn-icon btn-icon-delete" title="Excluir"><i class="fas fa-trash"></i></a>
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td class="enunciado-preview">Qual estrutura de dados usa o princípio LIFO (Last-In, First-Out)?</td>
-                        <td>Estrutura de Dados</td>
-                        <td>Múltipla Escolha</td>
-                        <td class="table-actions">
-                            <a href="#modal-visualizar" class="btn-icon" title="Visualizar"><i class="fas fa-eye"></i></a>
-                            <a href="editar-questao.html" class="btn-icon" title="Editar"><i class="fas fa-pencil-alt"></i></a>
-                            <a href="#modal-excluir" class="btn-icon btn-icon-delete" title="Excluir"><i class="fas fa-trash"></i></a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="enunciado-preview">Qual o resultado de 2 + 2?</td>
-                        <td>Cálculo I</td>
-                        <td>Múltipla Escolha</td>
-                        <td class="table-actions">
-                            <a href="#modal-visualizar" class="btn-icon" title="Visualizar"><i class="fas fa-eye"></i></a>
-                            <a href="editar-questao.html" class="btn-icon" title="Editar"><i class="fas fa-pencil-alt"></i></a>
-                            <a href="#modal-excluir" class="btn-icon btn-icon-delete" title="Excluir"><i class="fas fa-trash"></i></a>
-                        </td>
-                    </tr>
-                     </tbody>
+    <tr th:each="questao : ${questoes}">
+        
+        <td class="enunciado-preview" th:text="${questao.enunciado}">
+            Carregando...
+        </td>
+        
+        <td th:text="${questao.disciplina.nome}">
+            Matéria
+        </td>
+        
+        <td th:text="${questao.dificuldade}">
+            Difícil
+        </td>
+        
+        <td class="table-actions">
+            <a href="#modal-visualizar" class="btn-icon" title="Visualizar"><i class="fas fa-eye"></i></a>
+            <a href="editar-questao.html" class="btn-icon" title="Editar"><i class="fas fa-pencil-alt"></i></a>
+            <a href="#modal-excluir" class="btn-icon btn-icon-delete" title="Excluir"><i class="fas fa-trash"></i></a>
+        </td>
+    </tr>
+    
+    <tr th:if="${questoes.empty}">
+        <td colspan="4" style="text-align: center; padding: 20px;">
+            Nenhuma questão encontrada no banco de dados.
+        </td>
+    </tr>
+</tbody>
             </table>
         </section>
     </main>
