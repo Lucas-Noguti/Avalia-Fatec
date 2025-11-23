@@ -70,6 +70,12 @@ function Navbar() {
 
         <div className="user-menu">
           <a href="#">Olá, Professor!</a>
+          <Link 
+            to="/gerenciar-disciplinas" 
+            className={`admin-link ${location.pathname.includes('gerenciar') ? 'active' : ''}`}
+          >
+            Admin
+          </Link>
           <a href="#" onClick={handleLogout} className="logout-link">
             Sair <i className="fas fa-sign-out-alt"></i>
           </a>

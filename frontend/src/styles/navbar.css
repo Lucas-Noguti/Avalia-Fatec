@@ -76,6 +76,19 @@
     color: var(--color-red-dark);
 }
 
+.user-menu .admin-link {
+    color: var(--color-gray-light);
+    font-weight: 500;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+.user-menu .admin-link.active,
+.user-menu .admin-link:hover {
+    color: var(--color-white);
+    border-bottom-color: var(--color-red);
+}
+
 .mobile-menu-toggle {
     display: none;
     background: none;

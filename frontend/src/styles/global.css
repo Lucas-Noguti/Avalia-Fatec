@@ -88,6 +88,17 @@ a:hover {
     color: var(--color-red);
 }
 
+.btn-link {
+    font-weight: 500;
+    color: #D3D3D3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+    color: var(--color-white);
+}
+
 .container {
     width: 90%;
     max-width: 1200px;

@@ -1,0 +1,252 @@
+/* Admin Navigation */
+.admin-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.admin-nav a {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: none;
+    background-color: var(--color-dark-surface);
+    color: var(--color-gray-light);
+}
+
+.admin-nav a.active {
+    background-color: var(--color-red);
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+.admin-nav a:hover {
+    background-color: #333;
+    color: var(--color-white);
+}
+
+/* Admin Content Header */
+.admin-content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-dark-border);
+}
+
+.admin-content-header h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* Role Badges */
+.role-badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+
+.role-admin {
+    background-color: rgba(217, 4, 41, 0.2);
+    color: var(--color-red);
+}
+
+.role-prof {
+    background-color: rgba(170, 170, 170, 0.2);
+    color: var(--color-gray-light);
+}
+
+/* Modal User Info */
+.modal-user-info {
+    font-size: 0.95rem;
+    color: var(--color-gray-light);
+    background-color: var(--color-dark-bg);
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--color-dark-border);
+}
+
+/* Form Subtitle */
+.form-subtitle {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+}
+
+/* Radio Group */
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.radio-group input[type="radio"] {
+    accent-color: var(--color-red);
+    transform: scale(1.1);
+}
+
+.radio-group label {
+    font-size: 1rem;
+    color: var(--color-white);
+    margin-left: -0.5rem;
+}
+
+/* Checkbox List */
+.checkbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-height: 200px;
+    overflow-y: auto;
+    background: var(--color-dark-bg);
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--color-dark-border);
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-item input[type="checkbox"] {
+    accent-color: var(--color-red);
+    width: 18px;
+    height: 18px;
+    margin-right: 0.75rem;
+}
+
+.checkbox-item label {
+    font-size: 1rem;
+    color: var(--color-white);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--color-dark-surface);
+    border: 1px solid var(--color-dark-border);
+    border-radius: 8px;
+    padding: 2rem 2.5rem;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transform: scale(1);
+}
+
+.modal-content.modal-form {
+    max-width: 550px;
+}
+
+.modal-content.modal-confirm {
+    max-width: 500px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--color-gray-light);
+    text-decoration: none;
+    line-height: 1;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: var(--color-red);
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--color-dark-border);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+    font-size: 1.75rem;
+    color: var(--color-white);
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.modal-form .modal-body {
+    padding: 0;
+    gap: 0;
+}
+
+.modal-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.modal-form .modal-footer {
+    justify-content: flex-end;
+    border-top: 1px solid var(--color-dark-border);
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.modal-header-icon {
+    font-size: 3rem;
+    color: var(--color-red);
+    margin-bottom: 1rem;
+}
+
+.modal-confirm h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+}
+
+.modal-confirm .confirm-text {
+    font-size: 1rem;
+    color: var(--color-gray-light);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}

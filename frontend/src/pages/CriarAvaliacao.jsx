@@ -2,9 +2,19 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/forms.css';
 import '../styles/tables.css';
+import '../styles/criar-avaliacao.css';
 
 function CriarAvaliacao() {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    titulo: '',
+    turma: '',
+    valor: '',
+    dataInicio: '',
+    dataFim: '',
+    instrucoes: ''
+  });
+  const [filters, setFilters] = useState({ materia: '', search: '' });
   const [selectedQuestions, setSelectedQuestions] = useState([
     { id: 1, enunciado: 'Qual é a derivada de x²?', pontos: 1.5 },
     { id: 2, enunciado: 'Explique o conceito de "Pilha" (Stack)...', pontos: 2.0 }
@@ -33,9 +43,40 @@ function CriarAvaliacao() {
     ));
   };
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleFilterChange = (e) => {
+    const { name, value } = e.target;
+    setFilters(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleFilterSubmit = (e) => {
+    e.preventDefault();
+    console.log('Filtros aplicados:', filters);
+  };
+
+  const filteredQuestions = availableQuestions.filter(q => {
+    const matchesMateria = !filters.materia || q.materia.toLowerCase().includes(filters.materia.toLowerCase());
+    const matchesSearch = !filters.search || q.enunciado.toLowerCase().includes(filters.search.toLowerCase());
+    const notSelected = !selectedQuestions.find(sq => sq.id === q.id);
+    return matchesMateria && matchesSearch && notSelected;
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!formData.titulo || !formData.turma || !formData.valor) {
+      alert('Por favor, preencha todos os campos obrigatórios.');
+      return;
+    }
+    if (selectedQuestions.length === 0) {
+      alert('Por favor, adicione pelo menos uma questão à avaliação.');
+      return;
+    }
     // Aqui você adicionaria a lógica para salvar a avaliação
+    console.log('Avaliação criada:', { ...formData, questoes: selectedQuestions });
     navigate('/home');
   };
 
@@ -49,7 +90,7 @@ function CriarAvaliacao() {
       </section>
 
       <section className="question-form-container">
-        <form className="question-form">
+        <form className="question-form" onSubmit={handleSubmit}>
           <h3>1. Detalhes da Avaliação</h3>
 
           <div className="form-group">
@@ -58,6 +99,8 @@ function CriarAvaliacao() {
               type="text"
               id="titulo-avaliacao"
               name="titulo"
+              value={formData.titulo}
+              onChange={handleInputChange}
               placeholder="Ex: Prova Final - Cálculo I"
               required
             />
@@ -66,7 +109,13 @@ function CriarAvaliacao() {
           <div className="form-row">
             <div className="form-group form-group-half">
               <label htmlFor="turma">Turma</label>
-              <select id="turma" name="turma" required>
+              <select 
+                id="turma" 
+                name="turma" 
+                value={formData.turma}
+                onChange={handleInputChange}
+                required
+              >
                 <option value="">Selecione a turma</option>
                 <option value="eng-2025-1">Engenharia Civil - 2025.1</option>
                 <option value="cc-2025-1">Ciência da Computação - 2025.1</option>
@@ -79,8 +128,11 @@ function CriarAvaliacao() {
                 type="number"
                 id="valor-prova"
                 name="valor"
+                value={formData.valor}
+                onChange={handleInputChange}
                 placeholder="Ex: 10.0"
                 step="0.1"
+                min="0"
                 required
               />
             </div>
@@ -89,11 +141,25 @@ function CriarAvaliacao() {
           <div className="form-row">
             <div className="form-group form-group-half">
               <label htmlFor="data-inicio">Data de Abertura</label>
-              <input type="datetime-local" id="data-inicio" name="data-inicio" required />
+              <input 
+                type="datetime-local" 
+                id="data-inicio" 
+                name="dataInicio"
+                value={formData.dataInicio}
+                onChange={handleInputChange}
+                required 
+              />
             </div>
             <div className="form-group form-group-half">
               <label htmlFor="data-fim">Data de Fechamento</label>
-              <input type="datetime-local" id="data-fim" name="data-fim" required />
+              <input 
+                type="datetime-local" 
+                id="data-fim" 
+                name="dataFim"
+                value={formData.dataFim}
+                onChange={handleInputChange}
+                required 
+              />
             </div>
           </div>
 
@@ -102,6 +168,8 @@ function CriarAvaliacao() {
             <textarea
               id="instrucoes"
               name="instrucoes"
+              value={formData.instrucoes}
+              onChange={handleInputChange}
               rows="4"
               placeholder="Digite as instruções (tempo de prova, consulta, etc.)"
             ></textarea>
@@ -113,10 +181,15 @@ function CriarAvaliacao() {
         <h3>2. Adicionar Questões do Banco</h3>
 
         <section className="filter-bar no-margin">
-          <form className="filter-form">
+          <form className="filter-form" onSubmit={handleFilterSubmit}>
             <div className="form-group">
               <label htmlFor="materia-filter-2">Matéria</label>
-              <select id="materia-filter-2" name="materia">
+              <select 
+                id="materia-filter-2" 
+                name="materia"
+                value={filters.materia}
+                onChange={handleFilterChange}
+              >
                 <option value="">Todas</option>
                 <option value="calculo">Cálculo I</option>
                 <option value="estrutura">Estrutura de Dados</option>
@@ -127,18 +200,25 @@ function CriarAvaliacao() {
               <input
                 type="search"
                 id="search-filter-2"
-                name="q"
+                name="search"
+                value={filters.search}
+                onChange={handleFilterChange}
                 placeholder="Digite uma palavra-chave..."
               />
             </div>
-            <button type="button" className="btn btn-secondary">
+            <button type="submit" className="btn btn-secondary">
               <i className="fas fa-search"></i> Buscar
             </button>
           </form>
         </section>
 
         <div className="question-search-results">
-          {availableQuestions.map((question) => (
+          {filteredQuestions.length === 0 ? (
+            <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--color-gray-light)' }}>
+              Nenhuma questão disponível com os filtros aplicados.
+            </div>
+          ) : (
+            filteredQuestions.map((question) => (
             <article key={question.id} className="question-search-item">
               <div className="item-info">
                 <p className="enunciado">{question.enunciado}</p>
@@ -152,7 +232,8 @@ function CriarAvaliacao() {
                 <i className="fas fa-plus"></i> Adicionar
               </button>
             </article>
-          ))}
+          ))
+          )}
         </div>
       </section>
 
@@ -190,10 +271,10 @@ function CriarAvaliacao() {
       </section>
 
       <section className="form-actions">
-        <button type="button" className="btn btn-secondary">
+        <button type="button" className="btn btn-secondary" onClick={() => console.log('Rascunho salvo')}>
           Salvar como Rascunho
         </button>
-        <button type="submit" onClick={handleSubmit} className="btn btn-primary">
+        <button type="button" onClick={handleSubmit} className="btn btn-primary">
           Salvar e Publicar Avaliação
         </button>
       </section>

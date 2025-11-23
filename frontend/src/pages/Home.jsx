@@ -52,16 +52,16 @@ function Home() {
             <div className="card-actions">
               {assessment.isDraft ? (
                 <>
-                  <Link to="#" className="btn btn-secondary">Continuar Editando</Link>
-                  <button className="btn-icon">
+                  <Link to="/editar-avaliacao" className="btn btn-secondary">Continuar Editando</Link>
+                  <button className="btn-icon" title="Excluir">
                     <i className="fas fa-trash"></i>
                   </button>
                 </>
               ) : (
                 <>
-                  <Link to="#" className="btn btn-secondary">Editar</Link>
-                  <Link to="#" className="btn-link">Ver Resultados</Link>
-                  <button className="btn-icon">
+                  <Link to="/editar-avaliacao" className="btn btn-secondary">Editar</Link>
+                  <Link to="/ver-resultados" className="btn-link">Ver Resultados</Link>
+                  <button className="btn-icon" title="Excluir">
                     <i className="fas fa-trash"></i>
                   </button>
                 </>
